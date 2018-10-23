@@ -1,0 +1,20 @@
+{
+    "name": "semdevops/backpage",
+    "description": "provide back url management",
+    "authors": [
+        {
+            "name": "saran",
+            "email": "saran.devops@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Semdevops\\Backpage\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    }
+}
