@@ -16,11 +16,13 @@ if (!function_exists('backUrl'))
     /**
      * Generate the back url
      */
-    function backUrl($backId)
+    function backUrl($backId,$defaultUrl=null)
     {
         $backUrls = session('backUrls', []);
         if(!empty($backId)&&isset($backUrls[base64_decode($backId)])){
             return $backUrls[base64_decode($backId)];
+        }else if(!empty($default)){
+            return $defaultUrl;
         }else{
             return '#';
         }
