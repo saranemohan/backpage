@@ -1,11 +1,11 @@
 <?php
 
-if (!function_exists('routeBack')) 
+if (!function_exists('routeWithBack')) 
 {
     /**
      * Get the url to route to provide back id
      */
-    function routeBack($route, $param)
+    function routeWithBack($route, $param)
     {
         return route('routeBack', array_merge([$route], $param));
     }
