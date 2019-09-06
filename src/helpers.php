@@ -16,8 +16,9 @@ if (!function_exists('backUrl'))
     /**
      * Generate the back url
      */
-    function backUrl($backId,$defaultUrl=null)
+    function backUrl($request,$defaultUrl=null)
     {
+        $backId = $request->get('back');
         $backUrls = session('backUrls', []);
         if(!empty($backId)&&isset($backUrls[base64_decode($backId)])){
             return $backUrls[base64_decode($backId)];
