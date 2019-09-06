@@ -5,7 +5,7 @@ if (!function_exists('routeWithBack'))
     /**
      * Get the url to route to provide back id
      */
-    function routeWithBack($route, $param)
+    function routeWithBack($route, $param=[])
     {
         return route('routeBack', array_merge([$route], $param));
     }
