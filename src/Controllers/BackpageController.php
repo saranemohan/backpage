@@ -2,6 +2,7 @@
 namespace Semdevops\Backpage\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class BackpageController
 {
