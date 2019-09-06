@@ -10,15 +10,14 @@ class BackpageController
 	{
 		$originUrl = $request->server('HTTP_REFERER');
 		
-		$backUrls = session('backUrls',[]);
-		$backUrls[] = $originUrl;
+        $backUrls = session('backUrls',[]);
+        $backId = (string) Str::uuid();
+
+		$backUrls[$backId] = $originUrl;
 		session(['backUrls' => $backUrls]);
-		$keys = array_keys($backUrls);
-		$last = end($keys);
-		$backId = base64_encode($last);
 		
 		$requestParam = $request->all();
-		$requestParam['back'] = $backId;
+		$requestParam['back'] = base64_encode($backId);
 		return redirect()->route($route, $requestParam);
 	}
 
